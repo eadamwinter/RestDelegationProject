@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace RestDelegations.Entities
+{
+    public class Employee
+    {
+        [Key]
+        public int EmployeeId { get; set; }
+        [Required]
+        [MaxLength(30)]
+        public string Name { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string Surname { get; set; }
+        [Required]
+        public DateTime DateOfBirth { get; set; }
+        [Required]
+        public DateTime DateOfEmployment { get; set; }
+        [Required]
+        [Column(TypeName = "decimal(5,2)")]
+        public decimal Salary { get; set; }
+        public IEnumerable<Delegation> Delegations { get; set; }
+
+
+
+
+
+    }
+}
