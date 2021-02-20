@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eadam\\source\\repos\\RestDelegations\\RestDelegations\\RestDelegations.csproj": {}
+    "C:\\Users\\eadam\\source\\gitrepos\\GitRestDelegationProject\\RestDelegations\\RestDelegations.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eadam\\source\\repos\\RestDelegations\\RestDelegations\\RestDelegations.csproj": {
+    "C:\\Users\\eadam\\source\\gitrepos\\GitRestDelegationProject\\RestDelegations\\RestDelegations.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eadam\\source\\repos\\RestDelegations\\RestDelegations\\RestDelegations.csproj",
+        "projectUniqueName": "C:\\Users\\eadam\\source\\gitrepos\\GitRestDelegationProject\\RestDelegations\\RestDelegations.csproj",
         "projectName": "RestDelegations",
-        "projectPath": "C:\\Users\\eadam\\source\\repos\\RestDelegations\\RestDelegations\\RestDelegations.csproj",
+        "projectPath": "C:\\Users\\eadam\\source\\gitrepos\\GitRestDelegationProject\\RestDelegations\\RestDelegations.csproj",
         "packagesPath": "C:\\Users\\eadam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eadam\\source\\repos\\RestDelegations\\RestDelegations\\obj\\",
+        "outputPath": "C:\\Users\\eadam\\source\\gitrepos\\GitRestDelegationProject\\RestDelegations\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

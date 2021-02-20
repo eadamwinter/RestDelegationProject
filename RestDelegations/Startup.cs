@@ -27,7 +27,8 @@ namespace RestDelegations
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            // adding status 406 if wrong type-content and adding new content-type application/xml
+            services.AddControllers(opt=> { opt.ReturnHttpNotAcceptable = true; }).AddXmlDataContractSerializerFormatters();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestDelegations", Version = "v1" });

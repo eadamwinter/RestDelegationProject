@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0JxINL/zE0SpGLVn1e98QeDChwN3kBwp0nv9ndsSkMP1gUI/yEpyca9vCTyT9irZGDU1kvr4DbzGshcmMqW9Nw==",
+  "dgSpecHash": "fp42rZ80WpxxN4QHiAUkrLTK3Mk7eP7Y5JopQ4aa7glEL7pUgVDCDFJbrJuyWmaXiANMWG44mzqiNa7gtMEetA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eadam\\source\\repos\\RestDelegations\\RestDelegations\\RestDelegations.csproj",
+  "projectFilePath": "C:\\Users\\eadam\\source\\gitrepos\\GitRestDelegationProject\\RestDelegations\\RestDelegations.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eadam\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\eadam\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
