@@ -18,13 +18,15 @@ namespace RestDelegations.Entities
         [MaxLength(50)]
         public string Surname { get; set; }
         [Required]
+        [Column(TypeName = "date")]
         public DateTime DateOfBirth { get; set; }
         [Required]
+        [Column(TypeName = "date")]
         public DateTime DateOfEmployment { get; set; }
         [Required]
-        [Column(TypeName = "decimal(5,2)")]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal Salary { get; set; }
-        public IEnumerable<Delegation> Delegations { get; set; }
+        public ICollection<Delegation> Delegations { get; set; }
 
 
 

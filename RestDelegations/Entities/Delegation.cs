@@ -15,23 +15,28 @@ namespace RestDelegations.Entities
         [Required]
         [MaxLength(50)]
         public string Company { get; set; }
+        [Required]
         public string Status { get; set; }
+        [Required]
+        public string Code { get; set; }
         
         // travel Home->Delegation
         [Required]
+        [DataType(DataType.DateTime)]
         public DateTime TravelToStart { get; set; }
         [Required]
+        [DataType(DataType.DateTime)]
         public DateTime TravelToEnd { get; set; }
 
         // travel Delegation->Home
         [Required]
+        [DataType(DataType.DateTime)]
         public DateTime TravelBackStart { get; set; }
         [Required]
+        [DataType(DataType.DateTime)]
         public DateTime TravelBackEnd { get; set; }
-
-        public Employee Employee { get; set; }
         public int EmployeeId { get; set; }
-
-
+        public Employee Employee { get; set; }
+        
     }
 }
