@@ -22,7 +22,7 @@ namespace RestDelegations.Services
 
         public Employee GetEmployeeById(int employeeId)
         {
-            throw new NotImplementedException();
+            return _restDelegationsContext.Employees.FirstOrDefault(e => e.EmployeeId == employeeId);
         }
     }
 }
