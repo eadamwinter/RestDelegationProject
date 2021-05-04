@@ -1,4 +1,5 @@
-﻿using RestDelegations.Entities;
+﻿using RestDelegations.DBContext;
+using RestDelegations.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,17 @@ namespace RestDelegations.Services
 {
     public class DelegationRepository : IDelegationRepository
     {
+        private readonly RestDelegationsContext _restDelegationsContext;
+
+        public DelegationRepository(RestDelegationsContext restDelegationsContext)
+        {
+            _restDelegationsContext = restDelegationsContext;
+        }
         public IEnumerable<Delegation> GetAllDelegetaions()
         {
-            throw new NotImplementedException();
+            IEnumerable<Delegation> del = _restDelegationsContext.Delegations;
+            return del;
+            //throw new NotImplementedException();
         }
 
         public Delegation GetDelegationById(int delegationId)

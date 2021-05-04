@@ -36,6 +36,7 @@ namespace RestDelegations
             );
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IDelegationRepository, DelegationRepository>();
 
             // adding status 406 if wrong type-content and adding new content-type application/xml
             services.AddControllers(opt=> { opt.ReturnHttpNotAcceptable = true; }).AddXmlDataContractSerializerFormatters();
