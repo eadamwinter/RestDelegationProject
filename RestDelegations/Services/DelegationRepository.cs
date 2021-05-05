@@ -1,4 +1,5 @@
-﻿using RestDelegations.DBContext;
+﻿using Microsoft.EntityFrameworkCore;
+using RestDelegations.DBContext;
 using RestDelegations.Entities;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,30 @@ namespace RestDelegations.Services
         {
             IEnumerable<Delegation> del = _restDelegationsContext.Delegations;
             return del;
-            //throw new NotImplementedException();
+        }
+
+        public IEnumerable<Delegation> GetDelegationByEmployee(int employeeId)
+        {
+
+            IEnumerable<Delegation> dels = _restDelegationsContext.Delegations.Where(d => d.EmployeeId == employeeId);
+            return dels;
         }
 
         public Delegation GetDelegationById(int delegationId)
         {
-            throw new NotImplementedException();
+            Delegation del = _restDelegationsContext.Delegations.FirstOrDefault(d => d.DelegationId == delegationId);
+            return del;
+        }
+
+        public bool DoesEmployeeExist(int employeeId)
+        {
+            // return _restDelegationsContext.Employees.Any(e => e.EmployeeId == employeeId);
+
+            if(_restDelegationsContext.Employees.FirstOrDefault(e => e.EmployeeId == employeeId) == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

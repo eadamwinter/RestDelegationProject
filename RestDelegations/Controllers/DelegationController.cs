@@ -30,10 +30,33 @@ namespace RestDelegations.Controllers
             return Ok(result);
         }
 
-        [HttpGet("Delegations/{selection}")]
-        public IActionResult SelectedDelegation(string selection)
+        [HttpGet("Delegations/{delegationId}")]
+        public IActionResult SelectedDelegation(int delegationId)
         {
-            return Ok("Selected Delegation");
+            Delegation del = _delegationRepository.GetDelegationById(delegationId);
+            if(del==null)
+            {
+                return NotFound();
+            }
+            var result = _mapper.Map<DelegationGetDto>(del);
+            return Ok(result);
+        }
+
+        [HttpGet("Delegations/{employeeId}/all")]
+        // ten httphead umozliwia wysylanie tutaj requestow head ktore zwracaja tylko metadane
+        [HttpHead("Delegations/{employeeId}/all")]
+        public IActionResult DelegationsByEmployee(int employeeId)
+        {
+
+            if(!_delegationRepository.DoesEmployeeExist(employeeId))
+            {
+                return NotFound();
+            }
+
+            IEnumerable<Delegation> dels = _delegationRepository.GetDelegationByEmployee(employeeId);
+            var result = _mapper.Map<IEnumerable<DelegationGetDto>>(dels);
+            return Ok(result);
+            
         }
 
     }

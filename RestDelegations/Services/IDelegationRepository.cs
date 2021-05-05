@@ -10,5 +10,7 @@ namespace RestDelegations.Services
     {
         IEnumerable<Delegation> GetAllDelegetaions();
         Delegation GetDelegationById(int delegationId);
+        IEnumerable<Delegation> GetDelegationByEmployee(int employeeId);
+        bool DoesEmployeeExist(int employeeId);
     }
 }
