@@ -23,9 +23,10 @@ namespace RestDelegations.Controllers
         }
 
         [HttpGet("Delegations")]
-        public IActionResult AllDelegations()
+        // Regular Get method but with possibility to set country argument in header with country name -- filter
+        public IActionResult AllDelegations([FromHeader] string country)
         {
-            IEnumerable<Delegation> delegations = _delegationRepository.GetAllDelegetaions();
+            IEnumerable<Delegation> delegations = _delegationRepository.GetAllDelegations(country);
             var result = _mapper.Map<IEnumerable<DelegationGetDto>>(delegations);
             return Ok(result);
         }

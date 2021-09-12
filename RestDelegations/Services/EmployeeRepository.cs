@@ -15,6 +15,7 @@ namespace RestDelegations.Services
         {
             _restDelegationsContext = restDelegationsContext;
         }
+
         public IEnumerable<Employee> GetAllEmployees()
         {
             return _restDelegationsContext.Employees;
@@ -25,6 +26,10 @@ namespace RestDelegations.Services
             return _restDelegationsContext.Employees.FirstOrDefault(e => e.EmployeeId == employeeId);
         }
 
-        
+        public void AddEmployee(Employee newEmployee)
+        {
+            _restDelegationsContext.Employees.Add(newEmployee);
+            _restDelegationsContext.SaveChanges();
+        }
     }
 }

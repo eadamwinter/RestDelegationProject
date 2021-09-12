@@ -25,7 +25,7 @@ namespace RestDelegations.Controllers
             var result = _mapper.Map<IEnumerable<Models.EmployeeGetDto>>(employees);
             return Ok(result);
         }
-        [HttpGet("Employees/{id}")]
+        [HttpGet("Employees/{id}", Name = "GetEmployeeWithId")]
         public IActionResult GetEmployeeById(int id)
         {
             Employee employee = _employeeRepository.GetEmployeeById(id);
@@ -46,6 +46,17 @@ namespace RestDelegations.Controllers
             }
             var result = _mapper.Map<Models.EmployeeExtGetDto>(employee);
             return Ok(result);
+        }
+
+        [HttpPost("Employees/NewEmployee")]
+        public IActionResult CreateNewEmployee(Models.EmployeeCreateDto newEmployee)
+        {
+            var employeeEntity = _mapper.Map<Employee>(newEmployee);
+            _employeeRepository.AddEmployee(employeeEntity);
+
+            var employeeToReturn = _mapper.Map<Models.EmployeeGetDto>(employeeEntity);
+            return CreatedAtRoute("GetEmployeeWithId", new { id = employeeEntity.EmployeeId }, employeeToReturn);
+
         }
     }
 }

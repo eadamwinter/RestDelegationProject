@@ -12,6 +12,8 @@ namespace RestDelegations.Profiles
                 .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.GetYearDifference()))
                 .ForMember(dest => dest.WorkingTime, opt => opt.MapFrom(src => src.DateOfEmployment.GetYearDifference()))
                 .ForMember(dest => dest.PeriodOfNotice, opt => opt.MapFrom(src => src.DateOfEmployment.GetPeriodOfNotice()));
+
+            CreateMap<Models.EmployeeCreateDto, Entities.Employee>();
         }
     }
 }

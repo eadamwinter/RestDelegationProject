@@ -7,5 +7,6 @@ namespace RestDelegations.Services
     {
         IEnumerable<Employee> GetAllEmployees();
         Employee GetEmployeeById(int employeeId);
+        void AddEmployee(Employee newEmployee);
     }
 }

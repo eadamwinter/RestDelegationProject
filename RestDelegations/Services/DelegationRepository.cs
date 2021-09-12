@@ -16,9 +16,27 @@ namespace RestDelegations.Services
         {
             _restDelegationsContext = restDelegationsContext;
         }
-        public IEnumerable<Delegation> GetAllDelegetaions()
+        public IEnumerable<Delegation> GetAllDelegations()
         {
             IEnumerable<Delegation> del = _restDelegationsContext.Delegations;
+            return del;
+        }
+
+        public IEnumerable<Delegation> GetAllDelegations(string country)
+        {
+            IEnumerable<Delegation> del = null;
+
+            if(string.IsNullOrEmpty(country))
+            {
+                del = GetAllDelegations();
+            }
+            else
+            {
+                country = country.Trim();
+                del = _restDelegationsContext.Delegations.Where(d => d.Country == country);
+            }
+
+            
             return del;
         }
 
@@ -45,5 +63,7 @@ namespace RestDelegations.Services
             }
             return true;
         }
+
+
     }
 }
