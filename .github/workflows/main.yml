@@ -3,10 +3,10 @@ name: myFirstWorkflow
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 15 9 * *"
+    - cron: "38 14 10 * *"
 #on: workflow_dispatch
   #schedule:
-    #- cron: '0 15 9 * *'
+    #- cron: '0 15 10 * *'
   #push:
     #branches: [ $default-branch ]
   #pull_request:
@@ -14,7 +14,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: [self-hosted, test]
 
     steps:
       - uses: actions/checkout@v3
