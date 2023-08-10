@@ -1,0 +1,19 @@
+name: whyNotCreateADir
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: [self-hosted, test]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run hello
+        run: echo Hello from side1
+        
+      - name: create dir
+        run: mkdir side1_top_secret
+        
+      - name: execute ls
+        run: ls
