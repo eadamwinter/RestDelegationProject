@@ -17,3 +17,9 @@ jobs:
         
       - name: execute ls
         run: ls
+        
+      - name: execute pwd
+        run: pwd
+        
+      - name: script_test
+        run: /home/winterro/scripts/createFile.sh
